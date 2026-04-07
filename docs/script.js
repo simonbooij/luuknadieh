@@ -21,7 +21,7 @@
       navLinks.classList.remove('open');
       // Remove hash from URL after smooth scroll so refresh starts at top
       setTimeout(() => {
-        history.replaceState(null, '', ' ');
+        history.replaceState(null, '', window.location.pathname);
       }, 800);
     });
   });
