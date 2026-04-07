@@ -598,6 +598,8 @@ img {
   padding: 28px 36px;
   border-radius: 4px;
   width: 260px;
+  min-width: 260px;
+  max-width: 260px;
 }
 
 .contact-card h3 {
@@ -626,16 +628,17 @@ img {
   gap: 6px;
   margin-top: 12px;
   padding: 8px 18px;
-  background: #25d366;
+  background-color: #25d366;
   color: #fff;
   font-size: 0.85rem;
   font-weight: 600;
   border-radius: 4px;
-  transition: background 0.2s;
+  transition: background-color 0.2s;
+  -webkit-appearance: none;
 }
 
 .btn-whatsapp:hover {
-  background: #1da851;
+  background-color: #1da851;
   color: #fff;
 }
 
@@ -645,6 +648,9 @@ img {
   min-width: 16px;
   flex-shrink: 0;
   fill: currentColor;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
 }
 
 /* ==========================================================
