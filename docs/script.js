@@ -43,16 +43,22 @@
   const heroDate = document.getElementById('hero-date');
 
   function play666() {
-    heroDate.classList.remove('revealed');
-    // Force reflow so removing the class takes effect
+    heroDate.classList.remove('revealed', 'show-666', 'flicker-on');
     void heroDate.offsetWidth;
+    // Step 1: fade in 666
+    heroDate.classList.add('show-666');
+    // Step 2: start flicker after fade-in (0.8s)
+    setTimeout(() => {
+      heroDate.classList.add('flicker-on');
+    }, 800);
+    // Step 3: reveal date after 2s of flicker
     setTimeout(() => {
       heroDate.classList.add('revealed');
-    }, 2000);
+    }, 2800);
   }
 
-  // Play on load
-  play666();
+  // Play on load with slight delay so fade-in is visible
+  setTimeout(play666, 100);
 
   // Replay on click
   heroDate.addEventListener('click', play666);

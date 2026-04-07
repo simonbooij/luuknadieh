@@ -252,8 +252,16 @@ img {
     0 0 30px rgba(204, 0, 0, 0.5),
     0 0 60px rgba(204, 0, 0, 0.3);
   letter-spacing: 0.15em;
-  animation: flicker 0.15s infinite alternate;
+  opacity: 0;
   transition: opacity 0.8s ease, transform 0.8s ease, filter 0.8s ease;
+}
+
+.hero-date.show-666 .date-666 {
+  opacity: 1;
+}
+
+.hero-date.show-666.flicker-on .date-666 {
+  animation: flicker 0.15s infinite alternate;
 }
 
 .date-real {
@@ -267,7 +275,7 @@ img {
   opacity: 0;
   transform: scale(1.2);
   filter: blur(8px);
-  animation: none;
+  animation: none !important;
 }
 
 .hero-date.revealed .date-real {
