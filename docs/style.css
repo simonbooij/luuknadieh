@@ -643,6 +643,15 @@ a.btn-whatsapp:hover {
   -webkit-text-fill-color: #fff;
 }
 
+a.btn-whatsapp:active,
+a.btn-whatsapp:focus {
+  background-color: #25d366 !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 a.btn-whatsapp svg {
   display: inline-block;
   width: 16px;
@@ -653,6 +662,7 @@ a.btn-whatsapp svg {
   max-height: 16px;
   flex-shrink: 0;
   fill: currentColor;
+  transform: translateZ(0);
 }
 
 /* ==========================================================
