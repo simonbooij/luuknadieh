@@ -225,6 +225,63 @@ img {
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 16px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* 666 animation */
+.hero-date {
+  height: 1.6em; /* fixed height prevents layout shift */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.date-666,
+.date-real {
+  position: absolute;
+}
+
+.date-666 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 900;
+  color: #cc0000;
+  text-shadow:
+    0 0 10px rgba(204, 0, 0, 0.8),
+    0 0 30px rgba(204, 0, 0, 0.5),
+    0 0 60px rgba(204, 0, 0, 0.3);
+  letter-spacing: 0.15em;
+  animation: flicker 0.15s infinite alternate;
+  transition: opacity 0.8s ease, transform 0.8s ease, filter 0.8s ease;
+}
+
+.date-real {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* State: revealed */
+.hero-date.revealed .date-666 {
+  opacity: 0;
+  transform: scale(1.2);
+  filter: blur(8px);
+  animation: none;
+}
+
+.hero-date.revealed .date-real {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+@keyframes flicker {
+  0%   { opacity: 1; }
+  25%  { opacity: 0.85; }
+  50%  { opacity: 1; }
+  75%  { opacity: 0.9; }
+  100% { opacity: 0.95; }
 }
 
 .hero-title {

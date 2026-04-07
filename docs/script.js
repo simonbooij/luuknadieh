@@ -39,6 +39,24 @@
 
   animatedElements.forEach((el) => observer.observe(el));
 
+  // --- 666 date animation ---
+  const heroDate = document.getElementById('hero-date');
+
+  function play666() {
+    heroDate.classList.remove('revealed');
+    // Force reflow so removing the class takes effect
+    void heroDate.offsetWidth;
+    setTimeout(() => {
+      heroDate.classList.add('revealed');
+    }, 2000);
+  }
+
+  // Play on load
+  play666();
+
+  // Replay on click
+  heroDate.addEventListener('click', play666);
+
   // --- Nav background on scroll ---
   const nav = document.getElementById('nav');
 
